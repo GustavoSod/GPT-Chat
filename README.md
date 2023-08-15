@@ -1,7 +1,5 @@
 # React GPT-3 Chatbot
 
-![Project Logo](link_to_your_logo.png)
-
 A chatbot application built with React that utilizes the OpenAI GPT-3 API for intelligent conversation.
 
 ## Table of Contents
