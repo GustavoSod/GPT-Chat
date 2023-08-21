@@ -13,13 +13,13 @@ A chatbot application built with React that utilizes the OpenAI GPT-3 API for in
 1. Clone the repository:
 `git clone https://github.com/your-username/react-gpt3-chatbot.git`
 
-2. avigate to the project directory:
+2. Navigate to the project directory:
 `cd API-GPTCHAT`
 
 4. Install dependencies:
 `npm install`
 
-5. tart the development server:
+5. Start the development server:
 `npm start`
 
 6. Open your browser and navigate to ` http://localhost:3000` to interact with the chatbot.
