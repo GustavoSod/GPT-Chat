@@ -25,18 +25,18 @@ export const AreaSearch = styled.div`
 `;
 
 export const InputSearch = styled.div`
-    height: 13%;
+    height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 2px solid #000;
+    border-top: 2px solid #0F0F0F;
 `;
 
 export const InputText = styled.input`
     background-color: #6B6B6B;
     color: #fff;
     width: 40%;
-    height: 35%;
+    height: 45%;
     border: none;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -44,7 +44,7 @@ export const InputText = styled.input`
 
 export const ButtonSearch = styled.button`
     background-color: #B152FF;
-    height: 37%;
+    height: 47%;
     color: #eeee;
     font-weight: bold;
     font-size: 12px;
@@ -52,14 +52,19 @@ export const ButtonSearch = styled.button`
     border: none;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    cursor: pointer;
 `;
 export const ContentArea = styled.div`
     overflow-y: scroll;
-    height: 88%;
+    height: 85%;
     color: #fff;
-    width: 80%;
+    width: 65%;
     margin: auto;
     display: flex;
     flex-direction: column;
     text-align: start;
+`;
+
+export const TextArea = styled.input`
+    color: #fff;
 `;
