@@ -27,7 +27,7 @@ A chatbot application built with React that utilizes the OpenAI GPT-3 API for in
 
 ## Aviso
 
-Atualmente o projeto não esta funcionando pois para fazer requests pra api da openai é pago.
+Atualmente o projeto não esta funcionando pois para fazer requests para api da openai, é pago.
 
 
 ## License
