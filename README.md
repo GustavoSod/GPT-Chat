@@ -24,6 +24,12 @@ A chatbot application built with React that utilizes the OpenAI GPT-3 API for in
 
 6. Open your browser and navigate to ` http://localhost:3000` to interact with the chatbot.
 
+
+## Aviso
+
+Atualmente o projeto não esta funcionando pois para fazer requests pra api da openai é pago.
+
+
 ## License
 
 This project is licensed under the MIT License.
