@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { AreaSearch, InputSearch , ContentArea, InputText, ButtonSearch, TextArea} from './SearchStyle'
+import React, { useState } from 'react';
+import { AreaSearch, InputSearch, ContentArea, InputText, ButtonSearch } from './SearchStyle';
 
 export default function Search() {
 
@@ -7,14 +7,8 @@ export default function Search() {
     const [response, setResponse] = useState('');
 
     const apiFetch = async () => {
-        const apiKeyPart1 = "sk-P8Gk";
-        const apiKeyPart2 = "T1fEwBT5exebIPKd";
-        const apiKeyPart3 = "T3BlbkFJddJuzhi81";
-        const apiKeyPart4 = "m2rs33hu2Cz";
+        const obfuscatedApiKey = "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";
 
-        const obfuscatedApiKey = apiKeyPart1 + apiKeyPart2 + apiKeyPart3 + apiKeyPart4;
-
-        try {
             const response = await fetch(`https://api.openai.com/v1/completions`, {
                 method: 'POST',
                 headers: {
@@ -31,28 +25,26 @@ export default function Search() {
             });
 
             const responseData = await response.json();
-            setResponse(responseData); // Update the response state
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    }
+            if (responseData.error && responseData.error.type === "insufficient_quota") {
+                setResponse("You've exceeded your usage quota. Please check your plan and billing details.");
+            } else if (responseData.choices && responseData.choices[0]) {
+                setResponse(responseData.choices[0].text);
+            } else {
+                setResponse('No valid response received.');
+            }
+        }    
 
-  return (
-    <AreaSearch>
-    
-        <ContentArea>
-            <p>ola fsdfsdfsd fsdfsd fdsf sdfdsf sdf sdfsd fsd fsd fsd
-                fsdfsdfsdfdsfsdf fsdfsdfsd sdffdsf sdfsdf sdfsdf dsfsfd fsdfs
-                fdsfsdfdsf fsdfdsfdsf fsdfdsfsdf sdfdsfsdfsd fsdfdsfdsf fsdfsdfsdds
-                fsdfsdfsdf sdfsdfsdf sdfsdfdsf fsdfsdfsf sdfsdfsdfsd fdsfsdfsdf sdfs
-            </p>
-        </ContentArea> 
 
-        <InputSearch>
-            <InputText type="text" placeholder="digite aqui" onChange={(e) => setQuestions(e.target.value)}></InputText>
-            <ButtonSearch type="submit" placeholder="digite aqui" onClick={apiFetch}>ENVIAR</ButtonSearch>
-        </InputSearch>
+    return (
+        <AreaSearch>
+            <ContentArea>
+                <p>{response}</p>
+            </ContentArea>
 
-    </AreaSearch>
-  )
+            <InputSearch>
+                <InputText type="text" placeholder="digite aqui" onChange={(e) => setQuestions(e.target.value)} />
+                <ButtonSearch type="submit" onClick={apiFetch}>ENVIAR</ButtonSearch>
+            </InputSearch>
+        </AreaSearch>
+    )
 }

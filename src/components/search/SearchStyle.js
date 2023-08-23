@@ -35,23 +35,24 @@ export const InputSearch = styled.div`
 export const InputText = styled.input`
     background-color: #6B6B6B;
     color: #fff;
-    width: 40%;
-    height: 45%;
+    font-size: 15px;
+    width: 50%;
+    height: 60%;
     border: none;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 `;
 
 export const ButtonSearch = styled.button`
     background-color: #B152FF;
-    height: 47%;
+    height: 61%;
     color: #eeee;
     font-weight: bold;
     font-size: 12px;
     width: 10vh;
     border: none;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     cursor: pointer;
 `;
 export const ContentArea = styled.div`
@@ -63,8 +64,4 @@ export const ContentArea = styled.div`
     display: flex;
     flex-direction: column;
     text-align: start;
-`;
-
-export const TextArea = styled.input`
-    color: #fff;
 `;
