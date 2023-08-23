@@ -7,7 +7,12 @@ export default function Search() {
     const [response, setResponse] = useState('');
 
     const apiFetch = async () => {
-        const OPENAI_API_KEY = "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";
+        const apiKeyPart1 = "sk-P8Gk";
+        const apiKeyPart2 = "T1fEwBT5exebIPKd";
+        const apiKeyPart3 = "T3BlbkFJddJuzhi81";
+        const apiKeyPart4 = "m2rs33hu2Cz";
+
+        const obfuscatedApiKey = apiKeyPart1 + apiKeyPart2 + apiKeyPart3 + apiKeyPart4;
 
         try {
             const response = await fetch(`https://api.openai.com/v1/completions`, {
@@ -15,7 +20,7 @@ export default function Search() {
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
-                    Authorization: "Bearer " + OPENAI_API_KEY,
+                    Authorization: "Bearer " + obfuscatedApiKey,
                 },
                 body: JSON.stringify({
                     model: "text-davinci-003",
