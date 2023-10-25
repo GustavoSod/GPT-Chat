@@ -29,6 +29,10 @@ A chatbot application built with React that utilizes the OpenAI GPT-3 API for in
 
 Currently, the project is not working because it pays to make requests to the openai api.
 
+## Deploy
+
+https://gptchatjs.netlify.app
+
 
 ## License
 
